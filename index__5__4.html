@@ -1,0 +1,1952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Training Finder — UK Employer Guide · P-LD</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f7f8f5;
+  --bg2: #ffffff;
+  --bg3: #f0f3ee;
+  --ink: #1a1e1a;
+  --ink2: #3d4a3d;
+  --ink3: #6b7a6b;
+  --accent: #2d6a4f;
+  --accent-light: rgba(45,106,79,0.08);
+  --accent-hover: #1f4f3a;
+  --green: #2d6a4f;
+  --green-light: rgba(45,106,79,0.1);
+  --green-bright: #40916c;
+  --amber: #b5830a;
+  --amber-light: rgba(181,131,10,0.1);
+  --blue: #2563a8;
+  --blue-light: rgba(37,99,168,0.1);
+  --rule: #dde5d8;
+  --rule2: #eef1eb;
+  --white: #ffffff;
+  --shadow: 0 2px 12px rgba(30,50,30,0.09);
+  --nav-bg: #1a2e1a;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* ── Layout ── */
+.page {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 56px 24px 80px;
+}
+
+/* ── Header ── */
+.masthead {
+  margin-bottom: 40px;
+}
+.kicker {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 5vw, 40px);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+h1 em { font-style: italic; color: var(--accent); }
+.intro {
+  font-size: 16px;
+  color: var(--ink2);
+  max-width: 580px;
+  line-height: 1.65;
+}
+
+/* ── Context blocks ── */
+.context-section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 36px;
+  border: 1px solid var(--rule);
+  background: var(--bg2);
+}
+.context-block {
+  display: flex;
+  gap: 18px;
+  padding: 22px 28px;
+  border-bottom: 1px solid var(--rule);
+  align-items: flex-start;
+}
+.context-block:last-child { border-bottom: none; }
+.context-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+.context-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.context-body {
+  font-size: 13.5px;
+  color: var(--ink2);
+  line-height: 1.65;
+}
+
+/* ── Benefits strip ── */
+.benefits-strip {
+  display: flex;
+  align-items: center;
+  background: var(--nav-bg);
+  padding: 24px 32px;
+  margin-bottom: 36px;
+}
+.benefit { flex: 1; text-align: center; }
+.benefit-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.benefit-label { font-size: 12px; color: rgba(255,255,255,0.75); line-height: 1.4; }
+.benefit-divider { width: 1px; height: 48px; background: rgba(255,255,255,0.25); flex-shrink: 0; }
+
+/* ── How it works ── */
+.how-section { margin-bottom: 36px; }
+.how-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  margin-bottom: 16px;
+}
+.how-steps { display: flex; align-items: flex-start; gap: 12px; }
+.how-step {
+  flex: 1;
+  background: var(--bg2);
+  border: 1px solid var(--rule);
+  padding: 18px 16px;
+}
+.how-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.how-text { font-size: 13px; color: var(--ink2); line-height: 1.55; }
+.how-arrow { flex-shrink: 0; font-size: 20px; color: var(--ink3); margin-top: 28px; }
+
+/* ── Start prompt ── */
+.start-prompt { text-align: center; margin-bottom: 32px; }
+.start-prompt-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-style: italic;
+  color: var(--ink3);
+  margin-bottom: 6px;
+}
+.start-prompt-arrow { font-size: 22px; color: var(--accent); animation: bounce 1.4s ease-in-out infinite; }
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+
+/* ── Progress ── */
+.progress-wrap {
+  margin-bottom: 36px;
+}
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--ink3);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.progress-bar {
+  height: 4px;
+  background: var(--rule);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+/* ── Question card ── */
+.question-card {
+  background: var(--bg2);
+  border: 1px solid var(--rule);
+  padding: 36px 40px;
+  animation: fadeUp 0.3s ease both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.q-number {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  margin-bottom: 10px;
+}
+.q-text {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(18px, 3vw, 22px);
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+.q-hint {
+  font-size: 13px;
+  color: var(--ink3);
+  margin-bottom: 26px;
+  font-style: italic;
+}
+
+/* ── Options ── */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.option {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 18px;
+  border: 1px solid var(--rule);
+  background: var(--bg3);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, transform 0.1s;
+  user-select: none;
+}
+.option:hover {
+  border-color: var(--accent);
+  background: var(--accent-light);
+  transform: translateX(3px);
+}
+.option.selected {
+  border-color: var(--accent);
+  background: var(--accent-light);
+}
+.option.selected .opt-dot { background: var(--accent); border-color: var(--accent); }
+.option.selected .opt-dot::after { opacity: 1; }
+
+.opt-dot {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #aabba8;
+  margin-top: 2px;
+  position: relative;
+  transition: all 0.15s;
+}
+.opt-dot::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: white;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+/* multi-select uses square */
+.multi-mode .opt-dot { border-radius: 3px; }
+.multi-mode .opt-dot::after { border-radius: 1px; }
+.multi-mode .option.selected .opt-dot { background: var(--accent); }
+
+.opt-body {}
+.opt-label {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--ink);
+  line-height: 1.3;
+}
+.opt-desc {
+  font-size: 12.5px;
+  color: var(--ink3);
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
+/* ── Nav buttons ── */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 28px;
+  gap: 12px;
+}
+.btn {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 28px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s;
+  letter-spacing: 0.02em;
+}
+.btn-primary {
+  background: var(--accent);
+  color: white;
+}
+.btn-primary:hover { background: var(--accent-hover); }
+.btn-primary:disabled { background: var(--rule); color: var(--ink3); cursor: not-allowed; }
+.btn-ghost {
+  background: transparent;
+  color: var(--ink3);
+  border: 1px solid var(--rule);
+}
+.btn-ghost:hover { border-color: var(--ink2); color: var(--ink2); }
+
+/* ── Results ── */
+.results { animation: fadeUp 0.4s ease both; }
+
+.results-header {
+  background: var(--nav-bg);
+  color: white;
+  padding: 32px 40px;
+  margin-bottom: 32px;
+}
+.results-header .kicker { color: rgba(255,255,255,0.7); }
+.results-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(22px, 4vw, 30px);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+.results-header p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.8);
+  max-width: 500px;
+}
+
+/* ── Recommendation cards ── */
+.rec-section-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  margin-bottom: 16px;
+}
+
+.rec-card {
+  background: var(--bg2);
+  border: 1px solid var(--rule);
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+.rec-card.top { border-color: var(--accent); }
+
+.rec-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--rule);
+}
+.rec-rank {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #b5c4b5;
+  line-height: 1;
+  flex-shrink: 0;
+  width: 36px;
+}
+.rec-card.top .rec-rank { color: var(--accent); }
+
+.rec-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.2;
+  flex: 1;
+}
+.rec-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+.chip {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 2px 8px;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+.chip-cost  { background: var(--green-light); color: var(--green); }
+.chip-time  { background: var(--amber-light); color: var(--amber); }
+.chip-qual  { background: var(--blue-light); color: #5b8dee; }
+
+.rec-body {
+  padding: 18px 24px 20px;
+}
+.rec-why {
+  font-size: 14px;
+  color: var(--ink2);
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+.rec-why strong { color: var(--ink); font-weight: 600; }
+
+.rec-bullets {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 20px;
+  margin-bottom: 16px;
+}
+.rec-bullet {
+  font-size: 13px;
+  color: var(--ink2);
+  display: flex;
+  gap: 6px;
+  align-items: flex-start;
+}
+.rec-bullet::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+.rec-drawbacks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 20px;
+  margin-bottom: 18px;
+  padding: 14px 16px;
+  background: rgba(181,131,10,0.06);
+  border-left: 3px solid var(--amber);
+}
+.rec-drawback { font-size: 13px; color: var(--ink2); display: flex; gap: 6px; align-items: flex-start; }
+.rec-drawback::before { content: '!'; color: var(--amber); font-weight: 700; flex-shrink: 0; margin-top: 1px; font-size: 12px; }
+.rec-drawbacks-label {
+  grid-column: 1 / -1;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 6px;
+}
+
+.rec-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45,106,79,0.35);
+  transition: border-color 0.15s;
+}
+.rec-link:hover { border-color: var(--accent); }
+.rec-link::after { content: '↗'; font-size: 11px; }
+
+/* ── Provider callout ── */
+.provider-callout {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: var(--bg3);
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--accent);
+  padding: 18px 20px;
+  margin-bottom: 32px;
+}
+.provider-callout-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+.provider-callout-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 5px;
+}
+.provider-callout-body {
+  font-size: 13px;
+  color: var(--ink2);
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+.provider-callout-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45,106,79,0.35);
+  transition: border-color 0.15s;
+}
+.provider-callout-link:hover { border-color: var(--accent); }
+
+/* ── Comparison table ── */
+.compare-section {
+  margin-top: 40px;
+  background: var(--bg2);
+  border: 1px solid var(--rule);
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+}
+.compare-section h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.compare-hint { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 400; color: var(--ink3); font-style: italic; }
+.mobile-hint { display: none; }
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  min-width: 560px;
+}
+.compare-table th {
+  background: var(--bg2);
+  padding: 10px 16px;
+  text-align: left;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  border-bottom: 1px solid var(--rule);
+  white-space: nowrap;
+}
+.compare-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink2);
+  vertical-align: top;
+}
+.compare-table tr:last-child td { border-bottom: none; }
+.compare-table tr.highlight td { background: var(--accent-light); }
+.compare-table tbody tr:hover td { background: var(--green-light); }
+.compare-table tbody tr td:first-child::after { content: " ↗"; font-size: 10px; color: var(--accent); opacity: 0.6; }
+.compare-table td:first-child { font-weight: 600; color: var(--ink); }
+.table-link {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 1px solid rgba(45,106,79,0.3);
+  transition: border-color 0.15s, color 0.15s;
+}
+.table-link:hover { color: var(--accent-hover); border-color: var(--accent); }
+
+.fit-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.fit-dots {
+  display: flex;
+  gap: 3px;
+}
+.fit-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--rule);
+}
+.fit-dot.on { background: var(--accent); }
+.fit-score { font-size: 11px; color: var(--ink3); }
+.compare-cards { display: none; }
+
+/* ── Restart ── */
+.restart-wrap {
+  margin-top: 32px;
+  text-align: center;
+}
+.btn-restart {
+  background: transparent;
+  border: 1px solid var(--rule);
+  color: var(--ink3);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 24px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-restart:hover { border-color: var(--ink2); color: var(--ink2); }
+
+/* ── Site Nav ── */
+.site-nav {
+  background: var(--nav-bg);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 300;
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.nav-logo img { height: 26px; width: auto; }
+.nav-logo-divider { width: 1px; height: 20px; background: rgba(255,255,255,0.25); }
+  .nav-logo-label { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.85); }
+  .nav-logo-label em { font-style: italic; color: rgba(255,255,255,0.5); font-weight: 300; }
+.nav-links { display: flex; gap: 24px; align-items: center; }
+  .nav-links a { font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.15s; }
+  .nav-links a:hover { color: rgba(255,255,255,0.95); }
+.nav-links .nav-cta {
+  background: var(--green) !important;
+  color: white !important;
+  padding: 7px 16px !important;
+  font-weight: 600 !important;
+  transition: background 0.15s !important;
+}
+.nav-links .nav-cta:hover { background: var(--green-bright) !important; color: #fff !important; }
+
+.site-footer {
+  background: var(--nav-bg);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 36px 24px;
+}
+.footer-inner {
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.footer-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; margin-bottom: 8px; }
+.footer-logo img { height: 22px; width: auto; opacity: 0.8; }
+.footer-links { display: flex; flex-direction: column; gap: 8px; }
+.footer-links a { font-size: 13px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.15s; }
+.footer-links a:hover { color: rgba(255,255,255,0.85); }
+.footer-copy { font-size: 12px; color: rgba(255,255,255,0.4); line-height: 1.7; font-weight: 300; max-width: 380px; }
+.footer-copy a { color: rgba(255,255,255,0.5); text-decoration: underline; }
+.footer-copy a:hover { color: rgba(255,255,255,0.8); }
+
+/* ── Detail panel (slide-in) ── */
+.detail-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10,20,10,0.5);
+  z-index: 300;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.detail-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.detail-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(600px, 100vw); max-width: 100vw;
+  height: 100vh;
+  background: var(--bg2);
+  border-left: 1px solid var(--rule);
+  box-shadow: -8px 0 40px rgba(0,0,0,0.15);
+  overflow-y: auto;
+  z-index: 301;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+.detail-panel.open { transform: translateX(0); }
+
+.detail-panel-head {
+  background: var(--nav-bg);
+  padding: 24px 28px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+.detail-panel-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  line-height: 1.2;
+}
+.detail-panel-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+.detail-close {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  font-size: 18px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.15s;
+  line-height: 1;
+}
+.detail-close:hover { background: rgba(255,255,255,0.2); }
+
+.detail-body { padding: 28px; }
+
+.detail-section { margin-bottom: 28px; }
+.detail-section-title {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--rule);
+}
+.detail-summary {
+  font-size: 14px;
+  color: var(--ink2);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.detail-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+.detail-col-head {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--rule);
+}
+.detail-col-head.good { color: var(--green); }
+.detail-col-head.bad  { color: var(--amber); }
+.detail-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.detail-list li { font-size: 13px; color: var(--ink2); display: flex; gap: 8px; align-items: flex-start; line-height: 1.45; }
+.detail-list.good li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; }
+.detail-list.bad  li::before { content: '!'; color: var(--amber); font-weight: 700; flex-shrink: 0; font-size: 12px; }
+
+.detail-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.detail-info-box {
+  background: var(--bg3);
+  border: 1px solid var(--rule);
+  padding: 14px 16px;
+}
+.detail-info-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  margin-bottom: 5px;
+}
+.detail-info-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.detail-longtext {
+  font-size: 13.5px;
+  color: var(--ink2);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.detail-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 13px 24px;
+  transition: background 0.15s;
+  margin-top: 4px;
+}
+.detail-cta:hover { background: var(--accent-hover); }
+.detail-cta::after { content: '↗'; }
+
+/* ── Mobile nav drawer ── */
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:5px}
+.nav-toggle span{display:block;width:22px;height:2px;background:rgba(255,255,255,0.8);transition:all .2s}
+.nav-drawer{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);z-index:400}
+.nav-drawer-inner{position:absolute;top:0;right:0;width:260px;height:100%;background:var(--nav-bg);padding:20px 0;overflow-y:auto}
+.nav-drawer-close{display:block;width:100%;text-align:right;padding:0 20px 16px;background:none;border:none;color:rgba(255,255,255,0.6);font-size:20px;cursor:pointer}
+.nav-drawer-links{display:flex;flex-direction:column}
+.nav-drawer-links a{font-size:14px;color:rgba(255,255,255,0.75);text-decoration:none;padding:14px 24px;border-bottom:1px solid rgba(255,255,255,0.07);transition:color .15s}
+.nav-drawer-links a:hover{color:#fff;background:rgba(255,255,255,0.05)}
+.nav-drawer.open{display:block}
+
+@media (max-width: 540px) {
+  .detail-two-col { grid-template-columns: 1fr; }
+  .detail-info-grid { grid-template-columns: 1fr 1fr; }
+  .detail-body { padding: 20px 16px; }
+  .detail-panel { width: 100vw; }
+  .detail-panel-head { padding: 18px 16px 14px; }
+  .detail-panel-title { font-size: 17px; }
+}
+
+.hidden { display: none !important; }
+
+@media (max-width: 620px) {
+
+  /* Page layout */
+  .page { padding: 28px 16px 60px; }
+
+  /* Nav */
+  .nav-inner { padding: 0 16px; }
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+  .nav-logo-label { font-size: 12px; }
+
+  /* Masthead */
+  h1 { font-size: 28px; line-height: 1.15; }
+  .intro { font-size: 15px; }
+
+  /* Context blocks */
+  .context-block { padding: 16px; flex-direction: column; gap: 10px; }
+  .context-icon { font-size: 26px; }
+  .context-heading { font-size: 14px; }
+  .context-body { font-size: 13px; }
+
+  /* Benefits strip */
+  .benefits-strip { flex-direction: column; gap: 16px; padding: 20px 16px; }
+  .benefit-divider { width: 48px; height: 1px; }
+  .benefit-num { font-size: 28px; }
+
+  /* How it works */
+  .how-steps { flex-direction: column; gap: 10px; }
+  .how-arrow { transform: rotate(90deg); margin: 4px auto; }
+  .how-step { padding: 14px; }
+  .how-num { font-size: 22px; }
+  .how-text { font-size: 13px; }
+
+  /* Start prompt */
+  .start-prompt { margin-bottom: 24px; }
+
+  /* Progress */
+  .progress-wrap { margin-bottom: 20px; }
+
+  /* Question card */
+  .question-card { padding: 20px 16px; }
+  .q-text { font-size: 17px; }
+  .opt-label { font-size: 13px; }
+  .opt-desc { font-size: 12px; }
+  .option { padding: 13px 14px; min-height: 44px; }
+  .option:hover { transform: none; } /* disable slide on touch */
+
+  /* Nav buttons */
+  .nav { margin-top: 18px; }
+  .btn { padding: 11px 20px; font-size: 13px; }
+
+  /* Results header */
+  .results-header { padding: 20px 16px; }
+  .results-header h2 { font-size: 22px; }
+  .results-header p { font-size: 13px; }
+
+  /* Rec cards */
+  .rec-header { padding: 16px 16px 12px; gap: 10px; }
+  .rec-rank { font-size: 22px; width: 28px; }
+  .rec-title { font-size: 15px; }
+  .rec-body { padding: 14px 16px 16px; }
+  .rec-bullets { grid-template-columns: 1fr; }
+  .rec-drawbacks { grid-template-columns: 1fr; }
+  .rec-bullet, .rec-drawback { font-size: 12.5px; }
+  .rec-why { font-size: 13px; }
+  .chip { font-size: 9.5px; padding: 2px 6px; }
+
+  /* Compare table — replaced with cards on mobile */
+  .compare-section::before { display: none; }
+  .compare-table { display: none; }
+  .desktop-hint { display: none; }
+  .mobile-hint { display: inline; }
+  .compare-cards { display: flex; flex-direction: column; gap: 10px; padding: 12px; }
+  .compare-card {
+    background: var(--bg3);
+    border: 1px solid var(--rule);
+    padding: 14px;
+    cursor: pointer;
+  }
+  .compare-card.top-match { border-color: var(--accent); background: var(--accent-light); }
+  .compare-card-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .compare-card-name span { font-size: 18px; color: var(--ink3); }
+  .compare-card.top-match .compare-card-name span { color: var(--accent); }
+  .compare-card-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--rule2);
+    gap: 12px;
+  }
+  .compare-card-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .compare-card-label { color: var(--ink3); font-weight: 500; flex-shrink: 0; }
+  .compare-card-value { color: var(--ink2); text-align: right; }
+  .compare-card-fit { display: flex; align-items: center; gap: 6px; justify-content: flex-end; }
+  .compare-card-link { margin-top: 10px; display: block; padding-top: 10px; border-top: 1px solid var(--rule); }
+
+  /* Footer */
+  .site-footer { padding: 24px 16px; }
+  .footer-inner { flex-direction: column; gap: 20px; }
+  .footer-copy { font-size: 11px; max-width: 100%; }
+  .footer-links a { font-size: 12px; }
+}
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="https://people-led.org.uk/digitalisation" target="_blank">
+      <img src="https://images.squarespace-cdn.com/content/v1/68e7662a6139481929e0c748/7f0da5f9-46c7-4df7-9690-50d4786647a9/PL_logo_white_RGB.png" alt="P-LD logo">
+      <div class="nav-logo-divider"></div>
+      <span class="nav-logo-label">Training Finder <em>· Employers</em></span>
+    </a>
+    <div class="nav-links">
+      <a href="https://people-led.org.uk/digitalisation" target="_blank">About P-LD</a>
+      <a href="https://lsmyth13.github.io/feproviders/" target="_blank">Find an FE College</a>
+      <a href="https://lsmyth13.github.io/skillsbootcampsemployers/" target="_blank">Skills Bootcamps for Employers</a>
+      <a href="https://lsmyth13.github.io/trainingfinder/" target="_blank">Training Finder Quiz</a>
+      <a href="https://find-employer-schemes.education.gov.uk" target="_blank">Gov Schemes</a>
+      <a class="nav-cta" href="#quiz">Start quiz →</a>
+    </div>
+    <button class="nav-toggle" onclick="document.getElementById('mob-nav-5').classList.add('open')" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-drawer" id="mob-nav-5">
+  <div class="nav-drawer-inner">
+    <button class="nav-drawer-close" onclick="document.getElementById('mob-nav-5').classList.remove('open')">✕</button>
+    <nav class="nav-drawer-links">
+      <a href="https://lsmyth13.github.io/feproviders/" target="_blank">Find an FE College</a>
+      <a href="https://lsmyth13.github.io/skillsbootcampsemployers/" target="_blank">Skills Bootcamps for Employers</a>
+      <a href="https://lsmyth13.github.io/trainingfinder/" target="_blank">Training Finder Quiz</a>
+      <a href="https://people-led.org.uk/digitalisation" target="_blank">About P-LD</a>
+      <a href="https://find-employer-schemes.education.gov.uk" target="_blank">Gov Schemes</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- MASTHEAD -->
+  <div class="masthead">
+    <div class="kicker">UK Employer Training Guide · 2025–26</div>
+    <h1>You've got a skills gap.<br><em>Let's fix that.</em></h1>
+    <p class="intro">Whether someone on your team needs to get better at their job, you're bringing in new talent, or you just know something's missing — there's a training route out there for you. The tricky bit is knowing which one.</p>
+  </div>
+
+  <!-- CONTEXT SECTION -->
+  <div class="context-section">
+    <div class="context-block">
+      <div class="context-icon">📋</div>
+      <div>
+        <div class="context-heading">The UK has more funded training options than most employers realise</div>
+        <div class="context-body">Apprenticeships. Skills Bootcamps. Free Level 3 courses. Government-funded work academies. The problem isn't a lack of options — it's knowing which ones apply to a business like yours, and which will actually get results without eating up your time or budget.</div>
+      </div>
+    </div>
+    <div class="context-block">
+      <div class="context-icon">💷</div>
+      <div>
+        <div class="context-heading">A lot of it is free — especially for smaller businesses</div>
+        <div class="context-body">If you employ fewer than 250 people, the government picks up most or all of the training cost for several routes. Apprenticeships for under-25s are fully funded for SMEs. Skills Bootcamps are free when you're hiring. Free Level 3 courses cost your business nothing at all. You don't need an HR department to access this — you just need to know where to look.</div>
+      </div>
+    </div>
+    <div class="context-block">
+      <div class="context-icon">📈</div>
+      <div>
+        <div class="context-heading">Training pays off — for your business and your people</div>
+        <div class="context-body">Businesses that invest in staff development see stronger retention, better productivity, and easier recruitment. Staff who feel invested in are less likely to leave. And with the right route, you can train someone exactly to the way your business works — not just to a generic job description.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BENEFITS STRIP -->
+  <div class="benefits-strip">
+    <div class="benefit">
+      <div class="benefit-num">14+</div>
+      <div class="benefit-label">funded training routes in England</div>
+    </div>
+    <div class="benefit-divider"></div>
+    <div class="benefit">
+      <div class="benefit-num">£0</div>
+      <div class="benefit-label">cost for many routes if you're an SME</div>
+    </div>
+    <div class="benefit-divider"></div>
+    <div class="benefit">
+      <div class="benefit-num">9</div>
+      <div class="benefit-label">questions to get your recommendation</div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="how-section">
+    <div class="how-title">How this works</div>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="how-num">1</div>
+        <div class="how-text">Answer 9 plain-English questions about your business, your team, and what you're trying to achieve</div>
+      </div>
+      <div class="how-arrow">→</div>
+      <div class="how-step">
+        <div class="how-num">2</div>
+        <div class="how-text">We score every training route against your answers and surface the ones most likely to work for you</div>
+      </div>
+      <div class="how-arrow">→</div>
+      <div class="how-step">
+        <div class="how-num">3</div>
+        <div class="how-text">You get ranked recommendations with plain-English explanations and links straight to the right government pages</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="start-prompt">
+    <div class="start-prompt-text">Ready? Takes about 2 minutes.</div>
+    <div class="start-prompt-arrow">↓</div>
+  </div>
+
+  <!-- QUIZ -->
+  <div id="quiz">
+    <div class="progress-wrap">
+      <div class="progress-label">
+        <span id="progress-text">Question 1 of 9</span>
+        <span id="progress-pct">0%</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+    </div>
+    <div class="question-card" id="question-card"></div>
+    <div class="nav">
+      <button class="btn btn-ghost" id="btn-back">← Back</button>
+      <button class="btn btn-primary" id="btn-next" disabled>Next →</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="results hidden"></div>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <a class="footer-logo" href="https://people-led.org.uk/digitalisation" target="_blank">
+        <img src="https://images.squarespace-cdn.com/content/v1/68e7662a6139481929e0c748/7f0da5f9-46c7-4df7-9690-50d4786647a9/PL_logo_white_RGB.png" alt="P-LD">
+      </a>
+      <div class="footer-copy">
+        Built by the <a href="https://people-led.org.uk/digitalisation" target="_blank">Centre for People-Led Digitalisation</a> · Universities of Bath, Nottingham &amp; Loughborough.<br>
+        Training data accurate as of March 2026 · England only · Always verify current rates at gov.uk.
+      </div>
+    </div>
+    <div class="footer-links">
+      <a href="https://lsmyth13.github.io/feproviders/" target="_blank">↗ Find an FE College near you</a>
+      <a href="https://lsmyth13.github.io/skillsbootcampsemployers/" target="_blank">↗ Skills Bootcamps for Employers</a>
+
+      <a href="https://find-employer-schemes.education.gov.uk" target="_blank">↗ Find Employer Schemes (gov.uk)</a>
+      <a href="https://www.apprenticeships.gov.uk/employers/considering-hiring-an-apprentice" target="_blank">↗ Apprenticeships (gov.uk)</a>
+      <a href="https://www.gov.uk/guidance/free-courses-for-jobs" target="_blank">↗ Free Courses for Jobs (gov.uk)</a>
+      <a href="https://nationalcareers.service.gov.uk" target="_blank">↗ National Careers Service</a>
+    </div>
+  </div>
+</footer>
+
+<!-- DETAIL PANEL -->
+<div class="detail-overlay" id="detail-overlay"></div>
+<div class="detail-panel" id="detail-panel">
+  <div class="detail-panel-head">
+    <div>
+      <div class="detail-panel-title" id="dp-title"></div>
+      <div class="detail-panel-meta" id="dp-meta"></div>
+    </div>
+    <button class="detail-close" id="detail-close" aria-label="Close">✕</button>
+  </div>
+  <div class="detail-body" id="dp-body"></div>
+</div>
+
+<script>
+// ─────────────────────────────────────────────
+//  QUESTIONS
+// ─────────────────────────────────────────────
+const questions = [
+  {
+    id: 'size',
+    text: 'How big is your business?',
+    hint: 'This affects which government funding you can access.',
+    type: 'single',
+    options: [
+      { label: 'Just me / micro (1–9 staff)', desc: '', value: 'micro' },
+      { label: 'Small (10–49 staff)', desc: '', value: 'small' },
+      { label: 'Medium (50–249 staff)', desc: '', value: 'medium' },
+      { label: 'Large (250+ staff)', desc: 'You likely pay the Apprenticeship Levy', value: 'large' },
+    ]
+  },
+  {
+    id: 'goal',
+    text: 'What are you mainly trying to do?',
+    hint: 'Pick the one that fits best — you can always explore others.',
+    type: 'single',
+    options: [
+      { label: 'Hire someone new and train them up', desc: 'Bring in fresh talent with the right skills', value: 'hire' },
+      { label: 'Upskill people already on my team', desc: 'Help existing staff get better at their jobs', value: 'upskill' },
+      { label: 'Help someone change roles internally', desc: 'Move a member of staff into a new function', value: 'redeploy' },
+      { label: 'Fill a skills gap quickly', desc: 'There\'s something the team can\'t do right now', value: 'gap' },
+    ]
+  },
+  {
+    id: 'budget',
+    text: 'What\'s your rough training budget per person?',
+    hint: 'Don\'t worry — there are great free options too.',
+    type: 'single',
+    options: [
+      { label: 'As little as possible / free only', desc: '', value: 'zero' },
+      { label: 'Up to £500', desc: '', value: 'low' },
+      { label: '£500 – £5,000', desc: '', value: 'mid' },
+      { label: 'More than £5,000', desc: '', value: 'high' },
+    ]
+  },
+  {
+    id: 'timeframe',
+    text: 'How quickly do you need results?',
+    hint: 'Be honest — some great routes take time.',
+    type: 'single',
+    options: [
+      { label: 'Within a few weeks', desc: 'I need someone skilled very soon', value: 'weeks' },
+      { label: 'Within 3–6 months', desc: '', value: 'months' },
+      { label: 'Within a year', desc: 'I can plan ahead', value: 'year' },
+      { label: 'I\'m thinking long-term (1–3+ years)', desc: 'Building for the future', value: 'longterm' },
+    ]
+  },
+  {
+    id: 'disruption',
+    text: 'How much time off the job can you afford?',
+    hint: 'Some training requires staff to be away from their normal role regularly.',
+    type: 'single',
+    options: [
+      { label: 'Very little — they need to stay productive', desc: 'Can\'t spare much time away from the day job', value: 'none' },
+      { label: 'A day a week or occasional college days', desc: '', value: 'some' },
+      { label: 'Regular study time is fine', desc: 'Happy to plan around it', value: 'lots' },
+    ]
+  },
+  {
+    id: 'level',
+    text: 'What level of training are you looking for?',
+    hint: 'Not sure? Think about where the person is now vs where you need them.',
+    type: 'single',
+    options: [
+      { label: 'Entry level — they\'re new to this type of work', desc: 'Building skills from scratch', value: 'entry' },
+      { label: 'Mid-level — developing existing skills', desc: 'Getting better at something they already do', value: 'mid' },
+      { label: 'Advanced / specialist', desc: 'Deep expertise, technical or professional qualification', value: 'advanced' },
+      { label: 'Leadership / management', desc: 'Stepping up into a leadership role', value: 'leadership' },
+    ]
+  },
+  {
+    id: 'qual',
+    text: 'Does the training need to lead to a formal qualification?',
+    hint: 'A qualification is a nationally recognised certificate — useful for regulated industries or career progression.',
+    type: 'single',
+    options: [
+      { label: 'Yes — a recognised qualification matters', desc: 'e.g. for regulated sectors or career progression', value: 'yes' },
+      { label: 'Nice to have, but not essential', desc: '', value: 'nice' },
+      { label: 'No — practical skills are what counts', desc: 'Just need them to be able to do the job', value: 'no' },
+    ]
+  },
+  {
+    id: 'sector',
+    text: 'Which sector are you in?',
+    hint: 'Some funding is sector-specific.',
+    type: 'single',
+    options: [
+      { label: 'Construction / trades / green energy', desc: '', value: 'construction' },
+      { label: 'Digital / tech / data', desc: '', value: 'digital' },
+      { label: 'Health, care or education', desc: '', value: 'health' },
+      { label: 'Engineering or manufacturing', desc: '', value: 'engineering' },
+      { label: 'Hospitality, retail or logistics', desc: '', value: 'hospitality' },
+      { label: 'Professional services / office-based', desc: 'Finance, HR, legal, marketing etc.', value: 'professional' },
+      { label: 'Other / not sure', desc: '', value: 'other' },
+    ]
+  },
+  {
+    id: 'barriers',
+    text: 'What\'s your biggest concern about training?',
+    hint: 'Knowing this helps us flag the most practical routes.',
+    type: 'single',
+    options: [
+      { label: 'The cost', desc: 'Worried about what it\'ll actually set us back', value: 'cost' },
+      { label: 'The admin and paperwork involved', desc: 'Don\'t have time for complicated schemes', value: 'admin' },
+      { label: 'Staff not staying after qualifying', desc: 'What if they leave once they\'re trained?', value: 'retention' },
+      { label: 'Not sure what\'s actually available', desc: 'Too many options, don\'t know where to start', value: 'choice' },
+    ]
+  },
+];
+
+// ─────────────────────────────────────────────
+//  TRAINING ROUTES DATA
+// ─────────────────────────────────────────────
+const routes = [
+  {
+    id: 'apprenticeship',
+    name: 'Apprenticeship',
+    level: 'Level 2–5',
+    cost: 'Free–5% co-invest',
+    costRating: 'Very low',
+    time: '8 months – 3 years',
+    qual: 'Yes — nationally recognised',
+    link: 'https://www.apprenticeships.gov.uk/employers/considering-hiring-an-apprentice',
+    linkLabel: 'apprenticeships.gov.uk',
+    why: (a) => {
+      let reasons = [];
+      if (a.size !== 'large') reasons.push('free or near-free for SMEs hiring under-25s');
+      if (a.goal === 'hire') reasons.push('perfect for bringing in and training new staff from day one');
+      if (a.goal === 'upskill') reasons.push('works just as well for upskilling existing employees');
+      if (a.level === 'entry' || a.level === 'mid') reasons.push('covers entry to mid-level roles across almost every sector');
+      if (a.timeframe === 'year' || a.timeframe === 'longterm') reasons.push('the structured timeline suits your longer-term outlook');
+      return reasons;
+    },
+    bullets: ['Earn while they learn — no lost salary', 'Govt covers training costs (free for SMEs hiring under-25s)', 'No employer NI for apprentices under 25', 'Builds loyalty — staff trained to your way of working', '650+ different types available across all sectors'],
+    drawbacks: ['Minimum 8 months — not a quick fix', 'Apprentice must spend 20% of time on off-the-job learning (≈6hrs/wk)', 'Some admin and compliance required upfront', 'Levy funds expire after 12 months if unused (large employers)'],
+    detail: {
+      summary: 'An apprenticeship is a real job with structured training built in. The apprentice works for you, earns a wage, and spends at least 20% of their time on off-the-job learning — at college, online, or with a training provider. At the end they sit an assessment and earn a nationally recognised qualification.',
+      bestFor: ['Hiring new staff you want to train to your way of working', 'Upskilling an existing employee into a new or more senior role', 'Businesses in any sector — 650+ standards exist', 'Employers who can plan 1–3 years ahead'],
+      notFor: ['Filling a skills gap in the next few weeks', 'Staff who can\'t spare any time away from day-to-day duties', 'Very short-term contracts'],
+      costDetail: 'SMEs (payroll under £3m): free for apprentices under 25 from August 2026. Currently 5% co-invest for 22–24 year olds. Large employers draw from their levy pot (0.5% of payroll). If levy runs out, you pay 25% co-invest. Wages are always your responsibility — government does not fund these.',
+      howToStart: 'Create a free account on the Apprenticeship Service. Choose a standard (job role) from the approved list. Pick a training provider. Agree a training plan. The provider handles most compliance and progress tracking.',
+      timeDetail: 'Minimum 8 months (from August 2025). Most standards run 12–36 months. Degree apprenticeships run 3–5 years. Duration can be shortened if the apprentice has relevant prior learning.',
+    },
+    score: (a) => {
+      let s = 0;
+      if (a.size !== 'large') s += 25;
+      if (a.goal === 'hire' || a.goal === 'upskill') s += 20;
+      if (a.budget === 'zero' || a.budget === 'low') s += 15;
+      if (a.timeframe === 'year' || a.timeframe === 'longterm') s += 15;
+      if (a.disruption === 'some' || a.disruption === 'lots') s += 10;
+      if (a.qual === 'yes' || a.qual === 'nice') s += 10;
+      if (a.level === 'entry' || a.level === 'mid') s += 10;
+      if (a.barriers === 'cost') s += 10;
+      if (a.timeframe === 'weeks') s -= 20;
+      if (a.disruption === 'none') s -= 10;
+      return s;
+    }
+  },
+  {
+    id: 'bootcamp',
+    name: 'Skills Bootcamp',
+    level: 'Varies',
+    cost: 'Free (new hire) / 10% SME',
+    costRating: 'Free–very low',
+    time: 'Up to 16 weeks',
+    qual: 'Industry-recognised (varies)',
+    link: 'https://find-employer-schemes.education.gov.uk/schemes/skills-bootcamps',
+    linkLabel: 'find-employer-schemes.education.gov.uk',
+    why: (a) => {
+      let reasons = [];
+      if (a.timeframe === 'weeks' || a.timeframe === 'months') reasons.push('at up to 16 weeks, it\'s one of the fastest funded routes available');
+      if (a.goal === 'hire') reasons.push('completely free when you\'re recruiting a new member of staff');
+      if (a.goal === 'gap') reasons.push('designed exactly for closing specific skills gaps quickly');
+      if (a.sector === 'digital' || a.sector === 'construction' || a.sector === 'engineering') reasons.push(`strong availability in the ${a.sector} sector`);
+      if (a.barriers === 'cost') reasons.push('low or no cost to your business');
+      return reasons;
+    },
+    bullets: ['Up to 16 weeks — one of the fastest funded options', 'Free when recruiting new staff', 'Covers digital, construction, logistics, green skills and more', 'Guaranteed interview for the learner on completion', 'Can shorten a later apprenticeship if needed'],
+    drawbacks: ['Existing staff: you pay 10% (SME) or 30% (large employer)', 'Doesn\'t always lead to a formal qualification', 'Availability varies by region and sector', 'Quality can vary across providers — worth checking Ofsted ratings'],
+    detail: {
+      summary: 'Skills Bootcamps are short, intensive training courses (up to 16 weeks) funded by the Department for Education. They\'re designed to fill specific skills gaps quickly — particularly in digital, construction, engineering, logistics, and green industries. Employers get a guaranteed interview with any graduate who applies.',
+      bestFor: ['Recruiting pre-trained candidates at zero cost', 'Quickly upskilling existing staff in a high-demand area', 'Digital, tech, construction, logistics, green skills sectors', 'Businesses who need results within a few months'],
+      notFor: ['Gaining a formal, nationally recognised qualification', 'Comprehensive, in-depth professional development', 'Sectors with limited bootcamp provision in your region'],
+      costDetail: 'Recruiting a bootcamp graduate: completely free. Upskilling existing staff: SMEs (under 250 employees) pay 10% of training cost; large employers pay 30%. The government (DfE) funds the rest. Individuals are never charged. Typical course costs range from £2,000–£8,000, so your contribution would be £200–£800 (SME).',
+      howToStart: 'Find a local provider using the National Careers Service or the Find Employer Schemes portal. Contact the provider directly to discuss your skills needs. They will work with you to shape the course and identify eligible candidates.',
+      timeDetail: 'Courses run up to 16 weeks. Many can be delivered flexibly — online, blended, or in-person — so staff can train alongside their current role.',
+    },
+    score: (a) => {
+      let s = 0;
+      if (a.timeframe === 'weeks' || a.timeframe === 'months') s += 25;
+      if (a.goal === 'hire' || a.goal === 'gap') s += 20;
+      if (a.budget === 'zero' || a.budget === 'low') s += 15;
+      if (['digital','construction','engineering','hospitality'].includes(a.sector)) s += 15;
+      if (a.disruption === 'some' || a.disruption === 'lots') s += 10;
+      if (a.barriers === 'cost' || a.barriers === 'admin') s += 10;
+      if (a.qual === 'yes') s -= 10;
+      if (a.level === 'advanced') s -= 10;
+      return s;
+    }
+  },
+  {
+    id: 'freecourses',
+    name: 'Free Courses for Jobs (Level 3)',
+    level: 'Level 3',
+    cost: 'Free to employer',
+    costRating: 'Free',
+    time: '6–12 months (part-time)',
+    qual: 'Yes — Level 3 qualification',
+    link: 'https://www.gov.uk/guidance/free-courses-for-jobs',
+    linkLabel: 'gov.uk/free-courses-for-jobs',
+    why: (a) => {
+      let reasons = [];
+      if (a.budget === 'zero') reasons.push('completely free — no cost to you or your employee');
+      if (a.goal === 'upskill' || a.goal === 'redeploy') reasons.push('ideal for upskilling staff who don\'t yet have a Level 3 qualification');
+      if (a.disruption === 'some' || a.lots === 'lots') reasons.push('can usually be studied part-time alongside work');
+      if (a.qual === 'yes') reasons.push('leads to a proper, nationally recognised Level 3 qualification');
+      return reasons;
+    },
+    bullets: ['400+ courses across every major sector', 'Zero cost to employer or employee (if eligible)', 'Studied part-time — minimal disruption', 'Leads to a formal Level 3 qualification', 'Employee self-enrols — easy for the business'],
+    drawbacks: ['Employee must not already hold a Level 3 qualification to be eligible', 'Employer has limited control over which course is chosen', 'Can take 6–12 months — not fast', 'Requires the employee to be motivated enough to self-manage their study'],
+    detail: {
+      summary: 'Free Courses for Jobs (formerly the Lifetime Skills Guarantee) gives eligible adults access to over 400 fully funded Level 3 qualifications — equivalent to A levels or an advanced technical certificate. The employee chooses and enrols on the course themselves, usually at a local college, and studies part-time alongside work.',
+      bestFor: ['Employees who don\'t yet have a Level 3 qualification', 'Staff earning below the National Living Wage', 'Anyone aged 19–23 without a prior Level 3', 'Employers who want staff to upskill without any cost to the business'],
+      notFor: ['Employees who already hold a Level 3 or higher qualification', 'Employers wanting control over exactly which course is taken', 'Situations where speed is critical'],
+      costDetail: 'Completely free to both employer and employee for eligible learners. No contribution required. The Adult Skills Fund covers the full cost via the college or training provider.',
+      howToStart: 'Direct the employee to the National Careers Service course finder or their local college. The employee applies and enrols themselves — no employer registration required. You simply need to support flexible working arrangements for study.',
+      timeDetail: 'Typically 6–12 months, studied part-time alongside work. Exact duration depends on the course and the provider.',
+    },
+    score: (a) => {
+      let s = 0;
+      if (a.budget === 'zero') s += 25;
+      if (a.goal === 'upskill' || a.goal === 'redeploy') s += 20;
+      if (a.qual === 'yes' || a.qual === 'nice') s += 15;
+      if (a.level === 'mid') s += 15;
+      if (a.disruption === 'none' || a.disruption === 'some') s += 10;
+      if (a.barriers === 'cost') s += 10;
+      if (a.timeframe === 'weeks') s -= 15;
+      if (a.level === 'entry') s -= 5;
+      return s;
+    }
+  },
+  {
+    id: 'swap',
+    name: 'Sector-Based Work Academy (SWAP)',
+    level: 'Entry level',
+    cost: 'Free — Jobcentre funded',
+    costRating: 'Free',
+    time: 'Up to 6 weeks',
+    qual: 'Certificate of completion',
+    link: 'https://find-employer-schemes.education.gov.uk/schemes/sector-based-work-academy-programme-swap',
+    linkLabel: 'find-employer-schemes.education.gov.uk',
+    why: (a) => {
+      let reasons = [];
+      if (a.goal === 'hire') reasons.push('a free way to find and pre-screen motivated job-seekers for your sector');
+      if (a.timeframe === 'weeks') reasons.push('one of the quickest routes — up to 6 weeks of pre-employment training');
+      if (a.budget === 'zero') reasons.push('the Jobcentre funds everything — zero cost to your business');
+      if (a.level === 'entry') reasons.push('designed for people entering a sector for the first time');
+      return reasons;
+    },
+    bullets: ['Totally free — Jobcentre Plus manages referrals', 'Pre-screens motivated candidates for your business', 'Training tailored to your sector', 'Up to 6 weeks — quick and practical', 'Includes a guaranteed interview for candidates'],
+    drawbacks: ['Only available to people who are currently claiming benefits (JSA, UC, ESA)', 'Maximum 6 weeks — limited depth of training', 'You\'re committing to interview candidates, even if none turn out to be right', 'Dependent on your local Jobcentre Plus having capacity'],
+    detail: {
+      summary: 'A Sector-Based Work Academy Programme (SWAP) is a free, short pre-employment training scheme run in partnership between your business, Jobcentre Plus, and a local training provider. It gives benefits claimants a structured route into your sector — with a guaranteed interview at the end.',
+      bestFor: ['Businesses looking to recruit entry-level staff', 'Sectors with persistent vacancy problems (care, logistics, construction, hospitality)', 'Employers wanting to reach motivated candidates who may lack formal experience', 'Zero-budget recruitment with pre-screening built in'],
+      notFor: ['Upskilling existing employees', 'Roles requiring prior qualifications or experience', 'Businesses without capacity to host a short work placement'],
+      costDetail: 'Completely free. Jobcentre Plus funds the pre-employment training element. You provide the work placement and the guaranteed interview. No financial contribution required from the employer.',
+      howToStart: 'Contact your local Jobcentre Plus and express interest. They will match you with a training provider and identify suitable candidates. You agree the training content, set the placement dates, and commit to offering interviews on completion.',
+      timeDetail: 'Up to 6 weeks total, typically split between pre-employment training (delivered by a provider) and a work placement with your business.',
+    },
+    score: (a) => {
+      let s = 0;
+      if (a.goal === 'hire') s += 30;
+      if (a.level === 'entry') s += 20;
+      if (a.timeframe === 'weeks') s += 20;
+      if (a.budget === 'zero') s += 20;
+      if (a.barriers === 'cost') s += 10;
+      if (a.qual === 'yes') s -= 20;
+      if (a.level === 'advanced' || a.level === 'leadership') s -= 25;
+      if (a.goal === 'upskill') s -= 15;
+      return s;
+    }
+  },
+  {
+    id: 'htq',
+    name: 'Higher Technical Qualification (HTQ)',
+    level: 'Level 4–5',
+    cost: 'Employee uses student loan',
+    costRating: 'Low (employer optional)',
+    time: '1–2 years',
+    qual: 'Yes — Level 4 or 5',
+    link: 'https://find-employer-schemes.education.gov.uk/schemes/higher-technical-qualifications',
+    linkLabel: 'find-employer-schemes.education.gov.uk',
+    why: (a) => {
+      let reasons = [];
+      if (a.level === 'advanced') reasons.push('sits between A levels and a degree — a fast track to specialist technical roles');
+      if (a.budget === 'zero' || a.budget === 'low') reasons.push('your employee can fund it via student loan — no upfront cost to you');
+      if (a.qual === 'yes') reasons.push('leads to an employer-designed Level 4 or 5 qualification');
+      if (['digital','health','engineering'].includes(a.sector)) reasons.push(`well established in the ${a.sector} sector`);
+      return reasons;
+    },
+    bullets: ['Employee uses student loan — zero cost to employer', 'Employer-designed: teaches exactly the skills industry needs', 'Faster than a full degree (1–2 years)', 'Available in digital, health, engineering and more', 'Can be studied part-time alongside work'],
+    drawbacks: ['Takes 1–2 years — not suitable if you need skills quickly', 'Employee takes on student debt, which some may be reluctant to do', 'Not all sectors or regions have courses yet', 'Less employer control than an apprenticeship — you\'re not the training provider\'s client'],
+    detail: {
+      summary: 'Higher Technical Qualifications (HTQs) are Level 4 and 5 qualifications — sitting between A levels and a full degree. They\'re employer-designed, meaning the content is built around real industry skills needs. Employees fund them via student loans (just like a degree), so there\'s typically no direct cost to the employer unless you choose to sponsor.',
+      bestFor: ['Employees wanting to move into specialist technical roles', 'Sectors with clear Level 4–5 pathways: digital, health, engineering, construction', 'Employers who want work-ready, technically skilled hires or staff without the 3-year degree commitment', 'Situations where the employee is motivated to invest in their own career'],
+      notFor: ['Quick upskilling — it\'s a 1–2 year commitment', 'Employees reluctant to take on student loan debt', 'Sectors where HTQ provision is still limited'],
+      costDetail: 'Typical fees: £7,000–£9,250 per year. Employee accesses the same student finance as a degree — tuition fee loan and maintenance loan available. Employer can choose to sponsor (pay fees directly) but is not required to. Some HTQs may be fundable via the Growth & Skills Levy if linked to an apprenticeship standard.',
+      howToStart: 'Search for approved HTQs on UCAS or the Skills for Careers website — look for the HTQ logo. Discuss the option with the employee. They apply via the university or college directly and arrange their own student finance.',
+      timeDetail: '1–2 years depending on the qualification level (Level 4 = typically 1 year, Level 5 = 2 years). Available full-time or part-time.',
+    },
+    score: (a) => {
+      let s = 0;
+      if (a.level === 'advanced') s += 25;
+      if (a.qual === 'yes') s += 20;
+      if (a.budget === 'zero' || a.budget === 'low') s += 15;
+      if (['digital','health','engineering'].includes(a.sector)) s += 15;
+      if (a.timeframe === 'year' || a.timeframe === 'longterm') s += 10;
+      if (a.goal === 'upskill' || a.goal === 'redeploy') s += 10;
+      if (a.timeframe === 'weeks' || a.timeframe === 'months') s -= 20;
+      if (a.level === 'entry') s -= 10;
+      return s;
+    }
+  },
+  {
+    id: 'degreeapp',
+    name: 'Degree Apprenticeship',
+    level: 'Level 6–7',
+    cost: 'Free–5% (SME) / Levy (large)',
+    costRating: 'Low–moderate',
+    time: '3–5 years',
+    qual: 'Yes — full degree',
+    link: 'https://www.apprenticeships.gov.uk/employers/considering-hiring-an-apprentice',
+    linkLabel: 'apprenticeships.gov.uk',
+    why: (a) => {
+      let reasons = [];
+      if (a.level === 'advanced' || a.level === 'leadership') reasons.push('the only route that gives a full degree while staff keep working');
+      if (a.goal === 'hire') reasons.push('a powerful way to attract high-potential new talent');
+      if (a.qual === 'yes') reasons.push('leads to a full bachelor\'s or master\'s degree — the highest possible qualification');
+      if (a.timeframe === 'longterm') reasons.push('suits your long-term investment mindset');
+      if (a.barriers === 'retention') reasons.push('degree-level investment tends to significantly improve staff retention');
+      return reasons;
+    },
+    bullets: ['Staff get a full degree without leaving work', 'No tuition fees for the employee', 'Available in law, engineering, nursing, digital and more', 'Strong retention — major career investment', 'Employer shapes the graduate to their needs'],
+    drawbacks: ['3–5 year commitment — a big ask for employer and employee', 'Level 7 (master\'s level) is no longer levy-funded for staff aged 22+ from Jan 2026', 'High training band costs can exceed levy funds for large employers', 'University timetables may clash with business needs'],
+    detail: {
+      summary: 'Degree Apprenticeships combine a full bachelor\'s or master\'s degree with a real job. The employee works for you (typically 4 days a week) and studies at a university partner (1 day or block weeks). At the end they have both a degree and an apprenticeship certificate — with no tuition fees to pay.',
+      bestFor: ['Attracting high-potential school leavers who want a degree without the debt', 'Developing existing staff into senior, specialist or leadership roles', 'Businesses in engineering, law, nursing, digital, finance and more', 'Employers investing in long-term talent pipelines'],
+      notFor: ['Anyone who needs to be fully productive immediately', 'Businesses that can\'t accommodate university study days', 'Level 7 routes for staff aged 22+ — levy funding removed from January 2026'],
+      costDetail: 'SMEs (payroll under £3m): 5% co-invest (or free for under-25s from August 2026). Large employers: drawn from levy pot. Training band costs typically £18,000–£27,000 for bachelor\'s, up to £27,000 for master\'s. Employee pays no tuition fees. Wages are the employer\'s responsibility throughout.',
+      howToStart: 'Find a degree apprenticeship standard on the Apprenticeship Service. Identify a university that delivers it (most major universities now offer these). Create an Apprenticeship Service account, reserve funding, and agree a training plan with the university.',
+      timeDetail: '3–4 years for bachelor\'s level (Level 6), 4–5 years for master\'s level (Level 7). Typically structured as 4 days work / 1 day study, or block-release weeks at university.',
+    },
+    score: (a) => {
+      let s = 0;
+      if (a.level === 'advanced' || a.level === 'leadership') s += 25;
+      if (a.qual === 'yes') s += 20;
+      if (a.timeframe === 'longterm') s += 20;
+      if (a.goal === 'hire' || a.goal === 'upskill') s += 10;
+      if (a.barriers === 'retention') s += 15;
+      if (a.disruption === 'lots' || a.disruption === 'some') s += 10;
+      if (a.timeframe === 'weeks' || a.timeframe === 'months') s -= 30;
+      if (a.level === 'entry') s -= 20;
+      if (a.budget === 'zero' && a.size === 'large') s -= 5;
+      return s;
+    }
+  },
+  {
+    id: 'ojt',
+    name: 'On-the-Job / Internal Training',
+    level: 'Any',
+    cost: 'Staff time only',
+    costRating: 'Very low',
+    time: 'Days to weeks',
+    qual: 'No formal qualification',
+    link: null,
+    linkLabel: null,
+    why: (a) => {
+      let reasons = [];
+      if (a.timeframe === 'weeks') reasons.push('the fastest possible option — start immediately with no setup');
+      if (a.disruption === 'none') reasons.push('staff stay fully productive — no time out of the business');
+      if (a.barriers === 'admin') reasons.push('zero paperwork, no external schemes to manage');
+      if (a.budget === 'zero') reasons.push('no external cost beyond the time of your existing team');
+      return reasons;
+    },
+    bullets: ['Start immediately — no setup or registration needed', 'Keeps staff productive during training', 'Tailored exactly to your processes and culture', 'No admin or external scheme to manage', 'Good paired with a formal qualification later'],
+    drawbacks: ['No external recognition — staff can\'t put it on their CV as a qualification', 'Can unintentionally pass on bad habits or outdated practices', 'Quality depends entirely on the skill and patience of your internal trainer', 'Staff may not feel it counts as proper development'],
+    detail: {
+      summary: 'On-the-job training means learning by doing — working alongside an experienced colleague, being shown how to do tasks, and building competence through practice. It\'s the oldest and simplest form of training, and often the most immediately effective for role-specific skills. No registration, no external providers, no paperwork.',
+      bestFor: ['Onboarding new starters quickly', 'Teaching your specific processes, systems and ways of working', 'Practical, hands-on skills that are hard to teach in a classroom', 'Plugging a skills gap urgently with no budget to spare'],
+      notFor: ['Building nationally recognised qualifications', 'Developing broad professional knowledge beyond your business\'s practices', 'Staff who need external credibility for their development'],
+      costDetail: 'Cost is effectively your trainer\'s time. No fees, no external contracts. If you pair it with a formal qualification (e.g. an apprenticeship), the structured on-the-job elements can count toward the 20% off-the-job requirement.',
+      howToStart: 'Identify your internal expert. Structure a simple plan: what does the learner need to be able to do? Break it into stages. Set a buddy or mentor. Review progress regularly. Consider pairing with a free online course (Skills Toolkit) to add breadth.',
+      timeDetail: 'As fast or slow as you need — from a few hours for a specific task to several weeks for a full role handover.',
+    },
+    score: (a) => {
+      let s = 0;
+      if (a.timeframe === 'weeks') s += 25;
+      if (a.disruption === 'none') s += 20;
+      if (a.barriers === 'admin') s += 20;
+      if (a.budget === 'zero') s += 10;
+      if (a.goal === 'gap') s += 10;
+      if (a.qual === 'yes') s -= 25;
+      if (a.level === 'advanced') s -= 10;
+      return s;
+    }
+  },
+  {
+    id: 'elearning',
+    name: 'E-Learning / Online Courses',
+    level: 'Any',
+    cost: 'Free–£500/person',
+    costRating: 'Low',
+    time: 'Hours to months',
+    qual: 'Completion certificate (varies)',
+    link: 'https://theskillstoolkit.campaign.gov.uk',
+    linkLabel: 'theskillstoolkit.campaign.gov.uk',
+    why: (a) => {
+      let reasons = [];
+      if (a.disruption === 'none') reasons.push('fully self-paced — staff learn around their shifts without disruption');
+      if (a.budget === 'zero' || a.budget === 'low') reasons.push('free or very cheap options available, especially via the government\'s Skills Toolkit');
+      if (a.goal === 'gap') reasons.push('great for quickly patching a specific knowledge gap');
+      if (a.barriers === 'admin') reasons.push('minimal admin — no scheme registration or government portals needed');
+      return reasons;
+    },
+    bullets: ['Completely self-paced — fits around any schedule', 'Scales cheaply across large teams', 'Free options available via gov\'t Skills Toolkit', 'Good for compliance, digital basics and soft skills', 'Easy to track completion via an LMS'],
+    drawbacks: ['Completion rates are often low without manager follow-through', 'Not suited to practical or hands-on skills', 'Certificates are rarely valued by external employers', 'Can feel like a box-ticking exercise rather than real development'],
+    detail: {
+      summary: 'E-learning covers any training delivered online — from free government-backed courses on the Skills Toolkit, to commercial platforms like LinkedIn Learning or Udemy Business. It\'s self-paced, flexible, and cheap to scale across a team. Best suited to knowledge-based topics: compliance, digital basics, communication, data literacy.',
+      bestFor: ['Compliance training (fire safety, GDPR, health & safety)', 'Digital and data literacy across a whole team', 'Staff in remote or shift-based roles who can\'t attend classroom training', 'Businesses with no training budget needing a low-friction first step'],
+      notFor: ['Practical or physical skills', 'Staff who struggle with self-directed learning', 'Anyone seeking a qualification employers will recognise'],
+      costDetail: 'Free: government\'s Skills Toolkit covers digital, numeracy, and employability basics at no cost. Paid platforms: LinkedIn Learning (£20–30/user/month), Udemy Business (from ~£300/user/year), Coursera for Business (varies). Compliance-specific platforms vary widely. Many offer team pricing.',
+      howToStart: 'Start with the free Skills Toolkit (theskillstoolkit.campaign.gov.uk) — no setup needed. For paid platforms, most offer free trials. Assign a specific course to a specific person with a deadline — unassigned e-learning rarely gets completed.',
+      timeDetail: 'Entirely flexible — courses can be minutes or months. Most bite-sized compliance or skills modules take 30 minutes to a few hours.',
+    },
+    score: (a) => {
+      let s = 0;
+      if (a.disruption === 'none') s += 20;
+      if (a.barriers === 'admin') s += 20;
+      if (a.budget === 'zero' || a.budget === 'low') s += 15;
+      if (a.goal === 'gap') s += 15;
+      if (a.timeframe === 'weeks') s += 15;
+      if (a.qual === 'yes') s -= 20;
+      if (a.level === 'advanced') s -= 10;
+      return s;
+    }
+  },
+];
+
+// ─────────────────────────────────────────────
+//  STATE
+// ─────────────────────────────────────────────
+let current = 0;
+let answers = {};
+
+// ─────────────────────────────────────────────
+//  RENDER QUESTION
+// ─────────────────────────────────────────────
+function renderQuestion() {
+  const q = questions[current];
+  const card = document.getElementById('question-card');
+  const isMulti = q.type === 'multi';
+
+  card.innerHTML = `
+    <div class="q-number">Question ${current + 1} of ${questions.length}</div>
+    <div class="q-text">${q.text}</div>
+    ${q.hint ? `<div class="q-hint">${q.hint}</div>` : ''}
+    <div class="options ${isMulti ? 'multi-mode' : ''}" id="options-list">
+      ${q.options.map((o, i) => `
+        <div class="option ${answers[q.id] === o.value || (Array.isArray(answers[q.id]) && answers[q.id].includes(o.value)) ? 'selected' : ''}"
+             data-value="${o.value}" data-index="${i}">
+          <div class="opt-dot"></div>
+          <div class="opt-body">
+            <div class="opt-label">${o.label}</div>
+            ${o.desc ? `<div class="opt-desc">${o.desc}</div>` : ''}
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+
+  // Attach click handlers
+  card.querySelectorAll('.option').forEach(el => {
+    el.addEventListener('click', () => {
+      const val = el.dataset.value;
+      if (isMulti) {
+        if (!Array.isArray(answers[q.id])) answers[q.id] = [];
+        const idx = answers[q.id].indexOf(val);
+        if (idx > -1) { answers[q.id].splice(idx, 1); el.classList.remove('selected'); }
+        else { answers[q.id].push(val); el.classList.add('selected'); }
+      } else {
+        card.querySelectorAll('.option').forEach(e => e.classList.remove('selected'));
+        el.classList.add('selected');
+        answers[q.id] = val;
+      }
+      const hasAnswer = isMulti ? (answers[q.id] && answers[q.id].length > 0) : !!answers[q.id];
+      document.getElementById('btn-next').disabled = !hasAnswer;
+    });
+  });
+
+  // Progress
+  const pct = Math.round((current / questions.length) * 100);
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('progress-text').textContent = `Question ${current + 1} of ${questions.length}`;
+  document.getElementById('progress-pct').textContent = pct + '%';
+
+  // Button states
+  const hasAnswer = answers[q.id] !== undefined && answers[q.id] !== null && (Array.isArray(answers[q.id]) ? answers[q.id].length > 0 : true);
+  document.getElementById('btn-next').disabled = !hasAnswer;
+  document.getElementById('btn-next').textContent = current === questions.length - 1 ? 'See my recommendations →' : 'Next →';
+  document.getElementById('btn-back').style.visibility = current === 0 ? 'hidden' : 'visible';
+}
+
+// ─────────────────────────────────────────────
+//  SCORING & RESULTS
+// ─────────────────────────────────────────────
+function showResults() {
+  document.getElementById('quiz').classList.add('hidden');
+  const resultsEl = document.getElementById('results');
+  resultsEl.classList.remove('hidden');
+
+  // Score all routes
+  const scored = routes.map(r => ({ ...r, score: r.score(answers) }))
+    .sort((a, b) => b.score - a.score);
+
+  const top3 = scored.slice(0, 3);
+  const top5 = scored.slice(0, 5);
+
+  // Personalise header
+  const sizeLabel = { micro: 'a micro-business', small: 'a small business', medium: 'a medium-sized business', large: 'a large employer' }[answers.size] || 'your business';
+  const goalLabel = { hire: 'hiring and training new staff', upskill: 'upskilling your existing team', redeploy: 'redeploying staff into a new role', gap: 'filling a skills gap quickly' }[answers.goal] || 'your training goal';
+
+  resultsEl.innerHTML = `
+    <div class="results-header">
+      <div class="kicker">Your Results</div>
+      <h2>Here's what we'd recommend</h2>
+      <p>Based on ${sizeLabel} focused on ${goalLabel} — here are the routes most likely to work for you.</p>
+    </div>
+
+    <div class="rec-section-title">Top Recommendations</div>
+    ${top3.map((r, i) => renderRecCard(r, i, answers)).join('')}
+
+    <div class="provider-callout">
+      <div class="provider-callout-icon">📍</div>
+      <div>
+        <div class="provider-callout-title">Need a training provider near you?</div>
+        <div class="provider-callout-body">Many of these routes are delivered by local Further Education colleges — publicly funded institutions that work directly with employers. Use our interactive map to find colleges in your area and get in touch with their employer team.</div>
+        <a class="provider-callout-link" href="https://lsmyth13.github.io/feproviders/" target="_blank">Find an FE college near you ↗</a>
+      </div>
+    </div>
+
+    <div class="compare-section">
+      <h3>How your top matches compare <span class="compare-hint desktop-hint">Click any row for full details</span><span class="compare-hint mobile-hint">Tap any card for full details</span></h3>
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Route</th>
+            <th>Cost to you</th>
+            <th>Time</th>
+            <th>Qualification?</th>
+            <th>Fit for you</th>
+            <th>Learn more</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${scored.map((r, i) => `
+            <tr class="${i === 0 ? 'highlight' : ''}" style="cursor:pointer;" onclick="openDetail('${r.id}')" title="View full details for ${r.name}">
+              <td><strong>${r.name}</strong></td>
+              <td>${r.costRating}</td>
+              <td>${r.time}</td>
+              <td>${r.qual.startsWith('Yes') ? '✓ ' + r.qual.replace('Yes — ','') : r.qual}</td>
+              <td>
+                <div class="fit-bar">
+                  <div class="fit-dots">
+                    ${[1,2,3,4,5].map(n => `<div class="fit-dot ${r.score >= n * 18 ? 'on' : ''}"></div>`).join('')}
+                  </div>
+                  <span class="fit-score">${fitLabel(r.score)}</span>
+                </div>
+              </td>
+              <td>${r.link ? `<a class="table-link" href="${r.link}" target="_blank" onclick="event.stopPropagation()">${r.linkLabel} ↗</a>` : '<span style="color:var(--ink3);font-size:12px">—</span>'}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+      <div class="compare-cards">
+        ${top5.map((r, i) => `
+          <div class="compare-card ${i === 0 ? 'top-match' : ''}" onclick="openDetail('${r.id}')">
+            <div class="compare-card-name">
+              ${r.name}
+              <span>${i + 1}</span>
+            </div>
+            <div class="compare-card-row">
+              <span class="compare-card-label">Cost</span>
+              <span class="compare-card-value">${r.costRating}</span>
+            </div>
+            <div class="compare-card-row">
+              <span class="compare-card-label">Time</span>
+              <span class="compare-card-value">${r.time}</span>
+            </div>
+            <div class="compare-card-row">
+              <span class="compare-card-label">Qualification</span>
+              <span class="compare-card-value">${r.qual.startsWith('Yes') ? '✓ ' + r.qual.replace('Yes — ','') : r.qual}</span>
+            </div>
+            <div class="compare-card-row">
+              <span class="compare-card-label">Fit for you</span>
+              <span class="compare-card-value">
+                <div class="compare-card-fit">
+                  <div class="fit-dots">${[1,2,3,4,5].map(n => `<div class="fit-dot ${r.score >= n * 18 ? 'on' : ''}"></div>`).join('')}</div>
+                  <span class="fit-score">${fitLabel(r.score)}</span>
+                </div>
+              </span>
+            </div>
+            ${r.link ? `<a class="compare-card-link table-link" href="${r.link}" target="_blank" onclick="event.stopPropagation()">More info ↗</a>` : ''}
+          </div>
+        `).join('')}
+      </div>
+    </div>
+
+    <div class="restart-wrap">
+      <button class="btn-restart" id="btn-restart">← Start again</button>
+    </div>
+  `;
+
+  document.getElementById('btn-restart').addEventListener('click', restart);
+  resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function fitLabel(score) {
+  if (score >= 80) return 'Excellent fit';
+  if (score >= 60) return 'Great fit';
+  if (score >= 40) return 'Good fit';
+  if (score >= 20) return 'Worth considering';
+  return 'Less relevant';
+}
+
+function renderRecCard(r, i, a) {
+  const whyReasons = r.why(a).slice(0, 3);
+  const whyText = whyReasons.length > 0
+    ? `<strong>Why it suits you:</strong> ${whyReasons.join('; ')}.`
+    : `A strong all-round option based on your answers.`;
+
+  return `
+    <div class="rec-card ${i === 0 ? 'top' : ''}">
+      <div class="rec-header">
+        <div class="rec-rank">${i + 1}</div>
+        <div>
+          <div class="rec-title">${r.name}</div>
+          <div class="rec-meta">
+            <span class="chip chip-cost">${r.costRating}</span>
+            <span class="chip chip-time">${r.time}</span>
+            <span class="chip chip-qual">${r.qual.startsWith('Yes') ? '✓ Qualification' : r.qual.startsWith('No') ? 'No formal qual' : 'Cert varies'}</span>
+          </div>
+        </div>
+      </div>
+      <div class="rec-body">
+        <div class="rec-why">${whyText}</div>
+        <div class="rec-bullets">
+          ${r.bullets.map(b => `<div class="rec-bullet">${b}</div>`).join('')}
+        </div>
+        ${r.drawbacks && r.drawbacks.length ? `
+        <div class="rec-drawbacks">
+          <div class="rec-drawbacks-label">Watch out for</div>
+          ${r.drawbacks.map(d => `<div class="rec-drawback">${d}</div>`).join('')}
+        </div>` : ''}
+        ${r.link ? `<a class="rec-link" href="${r.link}" target="_blank">Learn more at ${r.linkLabel}</a>` : '<span style="font-size:13px;color:var(--ink3)">No external sign-up needed</span>'}
+      </div>
+    </div>
+  `;
+}
+
+// ─────────────────────────────────────────────
+//  NAVIGATION
+// ─────────────────────────────────────────────
+document.getElementById('btn-next').addEventListener('click', () => {
+  if (current < questions.length - 1) {
+    current++;
+    renderQuestion();
+    document.getElementById('question-card').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  } else {
+    showResults();
+  }
+});
+
+document.getElementById('btn-back').addEventListener('click', () => {
+  if (current > 0) { current--; renderQuestion(); }
+});
+
+function restart() {
+  current = 0;
+  answers = {};
+  document.getElementById('results').classList.add('hidden');
+  document.getElementById('quiz').classList.remove('hidden');
+  renderQuestion();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ─────────────────────────────────────────────
+//  DETAIL PANEL
+// ─────────────────────────────────────────────
+function openDetail(routeId) {
+  const r = routes.find(x => x.id === routeId);
+  if (!r) return;
+  const d = r.detail || {};
+
+  document.getElementById('dp-title').textContent = r.name;
+  document.getElementById('dp-meta').innerHTML = `
+    <span class="chip chip-cost">${r.costRating}</span>
+    <span class="chip chip-time">${r.time}</span>
+    <span class="chip chip-qual">${r.qual.startsWith('Yes') ? '✓ Qualification' : r.qual.startsWith('No') ? 'No formal qual' : 'Cert varies'}</span>
+    <span class="chip" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7)">Level: ${r.level}</span>
+  `;
+
+  document.getElementById('dp-body').innerHTML = `
+    ${d.summary ? `
+    <div class="detail-section">
+      <div class="detail-section-title">What is it?</div>
+      <p class="detail-summary">${d.summary}</p>
+    </div>` : ''}
+
+    <div class="detail-info-grid">
+      <div class="detail-info-box">
+        <div class="detail-info-label">Level</div>
+        <div class="detail-info-value">${r.level}</div>
+      </div>
+      <div class="detail-info-box">
+        <div class="detail-info-label">Time to complete</div>
+        <div class="detail-info-value">${r.time}</div>
+      </div>
+      <div class="detail-info-box">
+        <div class="detail-info-label">Cost rating</div>
+        <div class="detail-info-value">${r.costRating}</div>
+      </div>
+      <div class="detail-info-box">
+        <div class="detail-info-label">Qualification</div>
+        <div class="detail-info-value" style="font-size:13px">${r.qual}</div>
+      </div>
+    </div>
+
+    <div class="detail-two-col">
+      <div>
+        <div class="detail-col-head good">Benefits</div>
+        <ul class="detail-list good">
+          ${r.bullets.map(b => `<li>${b}</li>`).join('')}
+        </ul>
+      </div>
+      <div>
+        <div class="detail-col-head bad">Watch out for</div>
+        <ul class="detail-list bad">
+          ${(r.drawbacks || []).map(b => `<li>${b}</li>`).join('')}
+        </ul>
+      </div>
+    </div>
+
+    ${d.bestFor ? `
+    <div class="detail-two-col">
+      <div>
+        <div class="detail-col-head good">Best for</div>
+        <ul class="detail-list good">
+          ${d.bestFor.map(b => `<li>${b}</li>`).join('')}
+        </ul>
+      </div>
+      <div>
+        <div class="detail-col-head bad">Not ideal if...</div>
+        <ul class="detail-list bad">
+          ${(d.notFor || []).map(b => `<li>${b}</li>`).join('')}
+        </ul>
+      </div>
+    </div>` : ''}
+
+    ${d.costDetail ? `
+    <div class="detail-section">
+      <div class="detail-section-title">Cost breakdown</div>
+      <p class="detail-longtext">${d.costDetail}</p>
+    </div>` : ''}
+
+    ${d.howToStart ? `
+    <div class="detail-section">
+      <div class="detail-section-title">How to get started</div>
+      <p class="detail-longtext">${d.howToStart}</p>
+    </div>` : ''}
+
+    ${d.timeDetail ? `
+    <div class="detail-section">
+      <div class="detail-section-title">Time commitment</div>
+      <p class="detail-longtext">${d.timeDetail}</p>
+    </div>` : ''}
+
+    ${r.link ? `
+    <div class="detail-section">
+      <div class="detail-section-title">Official resource</div>
+      <a class="detail-cta" href="${r.link}" target="_blank">Go to ${r.linkLabel}</a>
+    </div>` : ''}
+  `;
+
+  document.getElementById('detail-panel').classList.add('open');
+  document.getElementById('detail-overlay').classList.add('open');
+  document.getElementById('detail-panel').scrollTop = 0;
+  document.body.style.overflow = 'hidden';
+}
+
+function closeDetail() {
+  document.getElementById('detail-panel').classList.remove('open');
+  document.getElementById('detail-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('detail-close').addEventListener('click', closeDetail);
+document.getElementById('detail-overlay').addEventListener('click', closeDetail);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDetail(); });
+
+// Init
+renderQuestion();
+</script>
+</body>
+</html>
